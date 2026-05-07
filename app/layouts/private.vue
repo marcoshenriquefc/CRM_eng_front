@@ -1,6 +1,2 @@
-<template>
-  <div style="display:flex;min-height:100vh;">
-    <aside style="width:240px;background:#0f172a;color:#fff;padding:16px;">CRM Engenharia</aside>
-    <main style="flex:1;"><slot /></main>
-  </div>
-</template>
+<template><div class='l'><AppSidebar/><div class='c'><AppTopbar/><main class='m'><slot/></main></div></div></template>
+<style scoped>.l{display:flex;min-height:100vh;background:#f8fafc}.c{flex:1;display:flex;flex-direction:column}.m{padding:1rem}</style>
