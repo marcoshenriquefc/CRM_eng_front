@@ -3,7 +3,6 @@
 Frontend profissional do CRM da empresa de engenharia, construído com Nuxt 4.
 
 ## Stack
-
 - Nuxt 4 + Vue 3 + TypeScript
 - Composition API (`<script setup lang="ts">`)
 - Pinia
@@ -11,7 +10,6 @@ Frontend profissional do CRM da empresa de engenharia, construído com Nuxt 4.
 - Camada centralizada de API com suporte a mocks temporários
 
 ## Instalação
-
 ```bash
 npm install
 ```
@@ -25,7 +23,6 @@ cp .env.example .env
 ```
 
 `.env.example`:
-
 - `NUXT_PUBLIC_API_BASE_URL=http://localhost:3000/api/v1`
 - `NUXT_PUBLIC_APP_NAME=CRM Engenharia`
 - `NUXT_PUBLIC_USE_MOCK_API=false`
@@ -48,20 +45,17 @@ npm run preview
 ```
 
 ## Conectar no backend
-
 1. Garanta backend em `http://localhost:3000` (backend).
 2. Frontend roda em `http://localhost:3001`.
 3. Configure `NUXT_PUBLIC_API_BASE_URL`.
 4. Mantenha `NUXT_PUBLIC_USE_MOCK_API=false` para usar API real.
 
 ## Mocks temporários
-
 - Ative com `NUXT_PUBLIC_USE_MOCK_API=true`.
 - Mocks ficam isolados em `app/services/mock`.
 - Componentes não devem conter lógica de mock.
 
 ## Testes
-
 ```bash
 npm run lint
 npm run test
