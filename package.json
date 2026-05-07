@@ -1,29 +1,29 @@
 {
-  "name": "crm-eng-frontend",
-  "private": true,
-  "type": "module",
-  "scripts": {
-    "dev": "nuxt dev --port 3001",
-    "build": "nuxt build",
-    "preview": "nuxt preview --port 3001",
-    "lint": "eslint .",
-    "test": "vitest"
-  },
-  "dependencies": {
-    "@pinia/nuxt": "^0.11.2",
-    "@vueuse/core": "^13.4.0",
-    "dayjs": "^1.11.13",
-    "nuxt": "^4.0.3",
-    "pinia": "^3.0.3",
-    "valibot": "^1.0.0",
-    "vue": "^3.5.13"
-  },
-  "devDependencies": {
-    "@types/node": "^22.15.3",
-    "eslint": "^9.26.0",
-    "prettier": "^3.5.3",
-    "typescript": "^5.8.3",
-    "vitest": "^3.1.3",
-    "vue-tsc": "^2.1.10"
-  }
+    "name": "crm-eng-frontend",
+    "private": true,
+    "type": "module",
+    "scripts": {
+        "dev": "nuxt dev --port 3001",
+        "build": "nuxt build",
+        "preview": "nuxt preview --port 3001",
+        "lint": "eslint .",
+        "test": "vitest"
+    },
+    "dependencies": {
+        "@pinia/nuxt": "^0.11.2",
+        "@vueuse/core": "^13.4.0",
+        "dayjs": "^1.11.13",
+        "nuxt": "^4.0.3",
+        "pinia": "^3.0.3",
+        "valibot": "^1.0.0",
+        "vue": "^3.5.13"
+    },
+    "devDependencies": {
+        "@types/node": "^22.15.3",
+        "eslint": "^9.26.0",
+        "prettier": "^3.5.3",
+        "typescript": "^5.8.3",
+        "vitest": "^3.1.3",
+        "vue-tsc": "^2.1.10"
+    }
 }

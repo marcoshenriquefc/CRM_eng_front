@@ -34,8 +34,11 @@
 - Frontend: `http://localhost:3001`
 
 ## Erro `Cannot find module 'vue-tsc/package.json'`
+
 Se ocorrer, instale dependências novamente após atualização:
+
 ```bash
 npm install
 ```
+
 O pacote `vue-tsc` está listado em `devDependencies` para compatibilidade com verificadores de tipo do Vite/Nuxt.

@@ -15,7 +15,9 @@ npm install
 ```
 
 ## Variáveis de ambiente
+
 Copie `.env.example` para `.env`:
+
 ```bash
 cp .env.example .env
 ```
@@ -28,12 +30,15 @@ cp .env.example .env
 > Nunca coloque secrets no frontend.
 
 ## Rodar projeto
+
 ```bash
 npm run dev
 ```
+
 Aplicação frontend em `http://localhost:3001`.
 
 ## Build
+
 ```bash
 npm run build
 npm run preview
@@ -57,34 +62,41 @@ npm run test
 ```
 
 ## Roles
+
 `ADMIN`, `MARKETING`, `COMERCIAL`, `FINANCEIRO`, `ENGENHARIA`, `GESTOR`, `SUPORTE`.
 
 ## Permissões
+
 Permissões são a fonte para liberar ações/telas no frontend (controle visual). O backend segue como fonte da verdade.
 
 ## Proteção de rotas
+
 - `auth.global.ts`: valida sessão antes da área privada.
 - `permission.ts`: valida permissão por meta/rota.
 - `guest.ts`: impede acesso de usuário autenticado nas rotas de convidado.
 
 ## Regra essencial
+
 Frontend **não é** fonte da verdade de segurança. Toda autorização real deve ocorrer no backend.
 
 ## Nova página protegida
+
 ```vue
 <script setup lang="ts">
-definePageMeta({
-  layout: 'private',
-  middleware: ['permission'],
-  permission: 'leads:read'
-})
+    definePageMeta({
+        layout: 'private',
+        middleware: ['permission'],
+        permission: 'leads:read',
+    })
 </script>
 ```
 
 ## Menu com permissão
+
 Use `useAuthStore().hasPermission('x:y')` para decidir renderização.
 
 ## AppPermissionGate
+
 ```vue
 <AppPermissionGate permission="leads:create">
   <AppButton>Criar lead</AppButton>
@@ -92,7 +104,9 @@ Use `useAuthStore().hasPermission('x:y')` para decidir renderização.
 ```
 
 ## useApi
+
 Use `const { request } = useApi()` para chamadas padronizadas (real/mock via flag).
 
 ## useAuth
+
 Use `const { login, logout, fetchMe, can } = useAuth()` para ciclo de sessão e checks de acesso.

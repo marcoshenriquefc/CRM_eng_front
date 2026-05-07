@@ -1,3 +1,42 @@
-<script setup lang='ts'>const auth=useAuthStore();const groups=[{name:'Dashboard',items:[{to:'/dashboard',label:'Dashboard',p:'dashboard:view'}]},{name:'CRM',items:[{to:'/leads',label:'Leads',p:'leads:read'}]},{name:'Marketing',items:[{to:'/forms',label:'Formulários',p:'forms:read'}]},{name:'Configurações',items:[{to:'/settings/users',label:'Usuários',p:'settings:users'}]}];const visible=computed(()=>groups.map(g=>({...g,items:g.items.filter(i=>auth.hasPermission(i.p))})).filter(g=>g.items.length))</script>
-<template><aside class='sb' v-if='auth.status!=="unknown"&&auth.status!=="checking"'><div class='logo'>CRM Engenharia</div><div v-for='g in visible' :key='g.name'><h4>{{g.name}}</h4><NuxtLink v-for='i in g.items' :key='i.to' :to='i.to' class='lnk'>{{i.label}}</NuxtLink></div></aside></template>
-<style scoped>.sb{width:250px;background:#0f172a;color:#fff;padding:1rem;display:grid;gap:1rem}.logo{font-weight:700}.lnk{display:block;color:#cbd5e1;padding:.35rem 0;text-decoration:none}</style>
+<script setup lang="ts">
+    const auth = useAuthStore()
+    const groups = [
+        { name: 'Dashboard', items: [{ to: '/dashboard', label: 'Dashboard', p: 'dashboard:view' }] },
+        { name: 'CRM', items: [{ to: '/leads', label: 'Leads', p: 'leads:read' }] },
+        { name: 'Marketing', items: [{ to: '/forms', label: 'Formulários', p: 'forms:read' }] },
+        { name: 'Configurações', items: [{ to: '/settings/users', label: 'Usuários', p: 'settings:users' }] },
+    ]
+    const visible = computed(() =>
+        groups
+            .map((g) => ({ ...g, items: g.items.filter((i) => auth.hasPermission(i.p)) }))
+            .filter((g) => g.items.length),
+    )
+</script>
+<template>
+    <aside class="sb" v-if="auth.status !== 'unknown' && auth.status !== 'checking'">
+        <div class="logo">CRM Engenharia</div>
+        <div v-for="g in visible" :key="g.name">
+            <h4>{{ g.name }}</h4>
+            <NuxtLink v-for="i in g.items" :key="i.to" :to="i.to" class="lnk">{{ i.label }}</NuxtLink>
+        </div>
+    </aside>
+</template>
+<style scoped>
+    .sb {
+        width: 250px;
+        background: #0f172a;
+        color: #fff;
+        padding: 1rem;
+        display: grid;
+        gap: 1rem;
+    }
+    .logo {
+        font-weight: 700;
+    }
+    .lnk {
+        display: block;
+        color: #cbd5e1;
+        padding: 0.35rem 0;
+        text-decoration: none;
+    }
+</style>
