@@ -1,0 +1,38 @@
+<script setup lang="ts">
+    defineProps<{
+        modelValue: string
+        label?: string
+        type?: string
+        placeholder?: string
+        error?: string
+        disabled?: boolean
+    }>()
+    defineEmits<{ (e: 'update:modelValue', v: string): void }>()
+</script>
+<template>
+    <label class="f"
+        ><span v-if="label">{{ label }}</span
+        ><input
+            class="i"
+            :type="type || 'text'"
+            :value="modelValue"
+            :placeholder="placeholder"
+            :disabled="disabled"
+            @input="$emit('update:modelValue', ($event.target as HTMLInputElement).value)"
+        /><small v-if="error" class="e">{{ error }}</small></label
+    >
+</template>
+<style scoped>
+    .f {
+        display: grid;
+        gap: 0.35rem;
+    }
+    .i {
+        padding: 0.6rem 0.7rem;
+        border: 1px solid #cbd5e1;
+        border-radius: 10px;
+    }
+    .e {
+        color: #dc2626;
+    }
+</style>
